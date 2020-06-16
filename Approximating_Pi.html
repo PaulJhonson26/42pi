@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Approximating Pi</title>
+    <script src="ApproxPiScript.js" defer></script>
+    <style type="text/css">
+    	@font-face
+    	{
+    		font-family:'Monospace';
+    	}
+    	body
+		{
+			background: #222222;
+            position: 
+			
+		}
+		.bodyText
+		{
+            position: absolute;
+            text-align: center;
+            top: 10%;
+            left: 5%;
+            right: 5%;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-family:'Courier';
+		}
+        .keyText
+        {
+            color: orange;
+            background: #444444;
+            padding: 14px 25px;
+            border-style: solid;
+            border-width: 2px;
+            border-color: #FFFFFF
+        }
+        .center 
+        {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+            height: 210px;
+            width: 295px;
+            border-style: solid;
+            border-width: 4px;
+            border-color: #CC0000;
+        }
+        
+    </style>
+</head>
+
+
+<body class = "bodyText">
+
+	<h1> This section approximates pi by increminting the numerator and denominator of the fraction : 22/7 to keep making it more and more accurate to the value of pi. </h1>
+    <h3 id = "22/7Content" class = "keyText"></h3>
+    <div></div>
+    <h1> This section approximates pi by summing an infinite series called <br> the "Gregory-Leibniz series".</h1>
+    <img id = "Gergory-Leinbiz" src = "Gregory-Leibniz_Series.png"  class = "center">
+    <h3 id = "GLSContent" class = "keyText"></h3>
+    <input type="number" id="iterations" value="100">
+    <button onclick="approximate()">Calculate</button>
+
+
+
+</body>
+
+ 
+
+</html>

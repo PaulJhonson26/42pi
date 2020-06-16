@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS - Fact Clock </title>
+	<style type="text/css">
+		@font-face 
+		{
+			font-family: 'digital-7';
+			src: url('digital-7.ttf');
+		}
+		body
+		{
+			background: #000000;
+		}
+		.clock
+		{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			color: #FFFFFF; 
+			font-size: 10vw;
+			font-family: Courier New;
+			display: inline;
+			
+		/*	border: 1px solid #FFFFFF; */
+			padding: 0px 5px 0px 5px;
+		}
+		.normalClock
+		{
+			position: absolute;
+			top: 65%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			color: #FFFFFF;
+			font-size: 40px;
+			font-family: digital-7;
+		}
+		.imageAlign
+		{
+			position: absolute;
+			top: 45%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+
+		}
+	</style>
+</head>
+<body>
+	<div id = "ConstantClockDisplay" class = "normalClock"></div>
+	<script type="text/javascript">
+			function showTime2()
+			{
+				var date = new Date();
+				var hours = date.getHours();
+				var minutes = date.getMinutes();
+				var seconds = date.getSeconds();
+				
+				hours = (hours<10) ? "0" + hours : hours;
+				minutes = (minutes<10) ? "0" + minutes : minutes;
+				seconds = (seconds<10) ? "0" + seconds : seconds;
+				var time = hours + ":" + minutes;
+				var timeAndSeconds = hours + ":" + minutes + ":" + seconds;
+				document.getElementById("ConstantClockDisplay").innerText = timeAndSeconds;
+				document.getElementById("ConstantClockDisplay").textContent = timeAndSeconds;
+
+				setTimeout(showTime2, 1000);
+			}
+			showTime2();
+
+
+	</script>
+	<div id = "FactClockDisplay" class = "clock"> </div>
+
+	<img id = "euler" src = "euler.png" style = "display: none" class = "imageAlign">
+	<img id = "Sierpinski" src = "Sierpinski.png" style = "display: none" class = "imageAlign" width="300" height="226">
+	<img id = "vol714" src = "vol714.png" style = "display: none" class = "imageAlign">
+	<script type="text/javascript">
+
+		function showTime()
+		{
+			var date = new Date();
+			var hours = date.getHours();
+			var minutes = date.getMinutes();
+			var seconds = date.getSeconds();
+			
+			hours = (hours<10) ? "0" + hours : hours;
+			minutes = (minutes<10) ? "0" + minutes : minutes;
+			seconds = (seconds<10) ? "0" + seconds : seconds;
+			var time = hours + ":" + minutes;
+			var timeAndSeconds = hours + ":" + minutes + ":" + seconds;
+			var facttime;
+			// ^2 "\u00B2"
+			// ^3 "\u00B3"
+			if(time == "00:00")
+			{
+				document.getElementById("euler").style.display = 'block';
+				facttime = "";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+
+			}
+			else if(time == "00:01")
+			{
+				document.getElementById("euler").style.display = 'none';
+				facttime = "";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "00:04")
+			{
+				facttime = "0" + "\u00B2" + ":2"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "00:07")
+			{
+				facttime = "Bond, James Bond.";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "00:09")
+			{
+				facttime = "0" + "\u00B2" + ":3"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "00:10")
+			{
+				facttime = "0010"+	"\u2082" + " = 2"+"\u2081"+"\u2080";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "00:11")
+			{
+				facttime = "0011"+	"\u2082" + " = 3"+"\u2081"+"\u2080";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "00:14")
+			{
+				facttime = "1/7";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "00:16")
+			{
+				facttime = "1/6";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "00:18")
+			{
+				facttime = "9/50";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "00:20")
+			{
+				facttime = "1/5";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "00:25")
+			{
+				facttime = "1/4";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "00:26")
+			{
+				facttime = "\u03A3" + "\u222B" +"!" + 	"\uD835\uDF03" + "\u03C0" + " " + "\u211D" + "\u03F5" + "g(n)!" + "\u2203" + "\uD835\uDF0F";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "00:33")
+			{
+				facttime = "1/3";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "00:36")
+			{
+				facttime = "0" + "\u00B2" + ":6"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "00:42")
+			{
+				facttime = "Answer to life the universe and everything";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "00:49")
+			{
+				facttime = "0" + "\u00B2" + ":7"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "00:50")
+			{
+				facttime = "1/2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:00")
+			{
+				facttime = "26" + "\u2070" + " o'Clock";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:01")
+			{
+				facttime = "0101"+	"\u2082" + " = 5" + "\u2081"+"\u2080";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:02")
+			{
+				facttime = "Mass of Neptune = 1.02 x 10" + "\u00B2" + "\u2076";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:04")
+			{
+				facttime = "1" + "\u00B2" + ":2"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:08")
+			{
+				facttime = "1" + "\u00B2" + ":2"+"\u00B3";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:09")
+			{
+				facttime = "1" + "\u00B2" + ":3"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:10")
+			{
+				facttime = "0110"+	"\u2082" + " = 6" + "\u2081"+"\u2080";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:11")
+			{
+				facttime = "0111"+	"\u2082" + " = 7" + "\u2081"+"\u2080";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:16")
+			{
+				facttime = "1" + "\u00B2" + ":4"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:20")
+			{
+				facttime = "5!";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:21")
+			{
+				facttime = "11" + "\u00B2" + "o'Clock";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:23")
+			{
+				facttime = "Un = n-1";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:25")
+			{
+				facttime = "5^3"; //got to add superscript 3
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:27")
+			{
+				facttime = "1" + "\u00B2" + ":4"+"\u00B3";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:31")
+			{
+				facttime = "Mass of Pluto = 1.31 x 10" + "\u00B2" + "\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:36")
+			{
+				facttime = "1" + "\u00B2" + ":6"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:41")
+			{
+				facttime = "\u221A"+ "2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:44")
+			{
+				facttime = "12" + "\u00B2" + "o'Clock";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:49")
+			{
+				facttime = "1" + "\u00B2" + ":7"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "01:57")
+			{
+				facttime = "\u03C0" + "/2" + " am";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "02:16")
+			{
+				facttime = "6^3"; //got to add superscript 3
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "02:23")
+			{
+				facttime = "\u221A"+ "5" + " o'Clock" ;
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "02:35")
+			{
+				facttime = "Enriched Uranium Atomic Mass";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "02:43")
+			{
+				facttime = "3" + "\u2075";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "02:44")
+			{
+				facttime = "Plutonium Atomic Mass. am";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "02:56")
+			{
+				facttime = "16" + "\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "03:14")
+			{
+				facttime = "\u03C0"+" am";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "03:21")
+			{
+				facttime = "3,2,1 go! am";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "03:24")
+			{
+				facttime = "18" + "\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "03:43")
+			{
+				facttime = "7^3"; //got to add superscript 3
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "04:01")
+			{
+				facttime = "2" + "\u00B2" + ":1"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "04:04")
+			{
+				facttime = "404 error time not found. am";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "04:09")
+			{
+				facttime = "2" + "\u00B2" + ":3"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "04:16")
+			{
+				facttime = "2" + "\u00B2" + ":4"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "04:20")
+			{
+				facttime = "420 blaze it! am";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "04:25")
+			{
+				facttime = "2" + "\u00B2" + ":5"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "04:36")
+			{
+				facttime = "2" + "\u00B2" + ":6"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "04:49")
+			{
+				facttime = "2" + "\u00B2" + ":7"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "05:12")
+			{
+				facttime = "2" + "\u2079" + " am";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "05:55")
+			{
+				facttime = "laughs in Thai.";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "06:02")
+			{
+				facttime = "N"+"\u2090"+ "= 6.02 x 10" + "\u00B2"+"\u00B3" + " 1/mol";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "07:14")
+			{
+				document.getElementById("euler").style.display = 'block';
+				facttime = "";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "07:20")
+			{
+				facttime = "6!";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "07:29")
+			{
+				facttime = "9" + "\u00B3";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "07:35")
+			{
+				facttime = "Mass of the moon = 7.35 x 10" + "\u00B2" + "\u00B2" + "kg";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "08:00")
+			{
+				facttime = "2"+ "\u00B3" +" am"; //^3
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "08:08")
+			{
+				facttime = "2" + "\u00B3" + ":2"+"\u00B3";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "08:27")
+			{
+				facttime = "2" + "\u00B3" + ":3"+"\u00B3";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "09:01")
+			{
+				facttime = "3" + "\u00B2" + ":1"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "09:04")
+			{
+				facttime = "3" + "\u00B2" + ":2"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "09:09")
+			{
+				facttime = "3" + "\u00B2" + ":3"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "09:16")
+			{
+				facttime = "3" + "\u00B2" + ":4"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "09:25")
+			{
+				facttime = "3" + "\u00B2" + ":5"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "09:36")
+			{
+				facttime = "3" + "\u00B2" + ":36"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "09:46")
+			{
+				facttime = "1 light year = 9.46 x 10" + 	"\u00B9" + 	"\u2075";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "09:49")
+			{
+				facttime = "3" + "\u00B2" + ":7"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "10:00")
+			{
+				facttime = "1000"+	"\u2082" + " = 8" +"\u2081"+"\u2080";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "10:01")
+			{
+				facttime = "1001"+	"\u2082" + " = 9" +"\u2081"+"\u2080";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "10:10")
+			{
+				facttime = "1010"+	"\u2082" + " = 10" +"\u2081"+"\u2080";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "10:11")
+			{
+				facttime = "1011"+	"\u2082" + " = 11" +"\u2081"+"\u2080";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "10:24")
+			{
+				facttime = "2" + "\u00B9" + "\u2070" + " o'Clock";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "10:26	") //test Eliot Regnier
+			{
+				facttime = "\u03A3" + "\u222B" +"!" + 	"\uD835\uDF03" + "\u03C0" + " " + "\u211D" + "\u03F5" + "g(n)!" + "\u2203" + "\uD835\uDF0F";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "10:50")
+			{
+				facttime = "FLORIAN A L'AIDE!!!!!!!!!!!!!"
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "11:00")
+			{
+				facttime = "1100"+	"\u2082" + " = 12" +"\u2081"+"\u2080";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "11:01")
+			{
+				facttime = "1101"+	"\u2082" + " = 13" +"\u2081"+"\u2080";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "11:10")
+			{
+				facttime = "1110"+	"\u2082" + " = 14" +"\u2081"+"\u2080";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "11:11")
+			{
+				facttime = "1111"+	"\u2082" + " = 15" +"\u2081"+"\u2080";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "11:23")
+			{
+
+				facttime = "Fibonacci o'Clock";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "12:24")
+			{
+				document.getElementById("Sierpinski").style.display = 'block';
+				facttime = "";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "12:34")
+			{
+				
+				facttime = "U"+ "\u2099" + " = n";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "13:00")
+			{
+				facttime = "26" + "\u2070" + " pm";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "13:01")
+			{
+				facttime = "6th palindromic prime number. pm";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "13:31")
+			{
+				facttime = "11^3 o'Clock";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "13:37")
+			{
+				facttime = "Leet";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "13:38")
+			{
+				facttime = "k = 1.38 x 10" + "\u207B"+ "\u00B2"+"\u00B3" + "J/K";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "13:41")
+			{
+				facttime = 	"\u221A"+ "2 pm";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "13:51")
+			{
+				facttime = "8th palindromic prime number. pm";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "13:57")
+			{
+				facttime = "Un = 2n-1";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "14:00")
+			{
+				facttime = 	"\u230A" + "e" + "\u230B" +" pm"; //floor
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "14:35")
+			{
+				facttime = "Encriched Uraniam Atomic Mass. pm";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "14:52")
+			{
+				facttime = "Year Leonardo Da Vinci was born";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "14:54")
+			{
+				facttime = "Distance to Andromeda Galaxy = 2.54 million light years";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "14:56")
+			{
+				facttime = "16^2 pm";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "15:00")
+			{
+				facttime = "\u230A" + "\u03C0" +"\u230B" + " pm"; //pi
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "15:14")
+			{
+				facttime = "\u03C0" + " pm"; //pi
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "15:21")
+			{
+				facttime = "3,2,1 GO! pm";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "15:24")
+			{
+				facttime = "18" + "\u00B2" + " pm";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "15:43")
+			{
+				facttime = "7" + "\u00B3"; //got to add superscript 3
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "15:26")
+			{
+				facttime = "1 Parsec = 3.26 Light Years";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "16:00")
+			{
+				facttime = "\u2308"+"\u03C0"+ "\u2309";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "16:01")
+			{
+				facttime = "4" + "\u00B2" + ":1"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "16:04")
+			{
+				facttime = "404 error time not found. pm";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "16:09")
+			{
+				facttime = "4" + "\u00B2" + ":3"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "16:16")
+			{
+				facttime = "4" + "\u00B2" + ":4"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "16:18")
+			{
+				facttime = "Golden Ratio x 10 o'Clock";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "16:20")
+			{
+				facttime = "420 blaze it! pm";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "16:22")
+			{
+				facttime = "Distance to Alpha Centauri = 4.22 light years";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "16:25")
+			{
+				facttime = "4" + "\u00B2" + ":5"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "16:36")
+			{
+				facttime = "4" + "\u00B2" + ":6"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "16:49")
+			{
+				facttime = "4" + "\u00B2" + ":7"+"\u00B2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "16:54")
+			{
+				facttime = "The Earth is 4.54 billion years old";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "17:28")
+			{
+				facttime = "12" + "\u00B3" + " o'Clock"; //^3
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "17:29")
+			{
+				facttime = "Second TaxiCab number o'Clock";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "17:55")
+			{
+				facttime = "laughs in indonesian. pm";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "19:14")
+			{
+				facttime = "Start of WW1";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "19:18")
+			{
+				facttime = "End of WW1";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "19:39")
+			{
+				facttime = "Start of WW1";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "19:45")
+			{
+				facttime = "End of WW2";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "20:00")
+			{
+				facttime = "21st Century";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "20:48")
+			{
+				facttime = "2" + "\u00B9" + "\u00B9" + " o'Clock";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "21:00")
+			{
+				facttime = "9+10";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else if(time == "23:59")
+			{
+				facttime = "Tommorow - 1";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			
+			}
+			else if(time == "10:36") //test times
+			{
+				facttime = "";
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+			}
+			else
+			{
+				facttime = time;
+				document.getElementById("FactClockDisplay").innerText = facttime;
+				document.getElementById("FactClockDisplay").textContent = facttime;
+				
+				document.getElementById("euler").style.display = 'none';
+				document.getElementById("Sierpinski").style.display = 'none';
+				document.getElementById("vol714").style.display = 'none';
+			}
+			setTimeout(showTime, 1000);
+		}
+		
+		showTime();
+	</script>
+</body>
+</html>
