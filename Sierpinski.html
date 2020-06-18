@@ -7,13 +7,27 @@
     <title>Sierpinski</title>
     <script src="Sierpinski.js" defer></script>
     <style type="text/css">
-
+    	.bodyStyle
+    	{
+ 				overflow-x: scroll;
+   				width: auto;
+   				white-space: nowrap;
+   				transform: scale();
+   				color: #00FF00;
+   				background: black;
+    	}	
     </style>
 
 </head>
 
-<body>
-	<h1>Sierpinski's Triangle</h1>
+<body class = "bodyStyle">
+	<h1>Sierpinski Triangle</h1>
+	<input type="number" id="Height" value="128">
+	<input type="number" id="Tessel" value="3">
+    <button onclick="Triangulate()">Calculate</button>
+    <div id = "triDiv">
+    	<p id = "sierp">&nbsp&nbsp&nbsp*</p>
+	</div>
 </body>
 
 </html>
