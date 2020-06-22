@@ -5,29 +5,30 @@ var elemTri_Vals;
 var wholeTri_Vals;;
 var elemTri_Stars;
 var wholeTri_Stars;
-var curScale
+var curScale = 1;
 var newScale
 console.log("Need to find a better way to completly zoom Out. It's weird the way it works.")
 function zoomIn()
 {
-	curScale = getComputedStyle(document.documentElement).getPropertyValue('zoom');
+
 	console.log("old zoom", curScale);
 	if(curScale	< 0.1)
-	{
-			newScale = curScale*10;
+	{		
+			newScale = curScale*5;
 	}
 	else
 	{
 		newScale = curScale*2;
 	}
+	document.querySelector("#triDiv").style.transform = "scale(" + newScale + ")";
+	curScale = newScale;
 	
-	
-	document.documentElement.style.setProperty('zoom', newScale);
-	console.log("new zoom", getComputedStyle(document.documentElement).getPropertyValue('zoom'));
+
+	console.log("new zoom" + document.querySelector("#triDiv").style.transform + "curScale: " + curScale);
 }
 function zoomOut()
 {
-	curScale = getComputedStyle(document.documentElement).getPropertyValue('zoom');
+	
 	console.log("old zoom", curScale);
 	if(curScale	> 0.1)
 	{
@@ -35,12 +36,15 @@ function zoomOut()
 	}
 	else
 	{
-		newScale = curScale*0.1;
+		newScale = curScale*0.2;
 	}
 	
 	
-	document.documentElement.style.setProperty('zoom', newScale);
-	console.log("new zoom", getComputedStyle(document.documentElement).getPropertyValue('zoom'));
+	document.querySelector("#triDiv").style.transform = "scale(" + newScale + ")";
+	curScale = newScale;
+	
+
+	console.log("new zoom" + document.querySelector("#triDiv").style.transform + "curScale: " + curScale);
 }
 function Triangulate()
 {	
