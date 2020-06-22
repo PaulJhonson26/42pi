@@ -8,6 +8,7 @@ var wholeTri_Stars;
 var curScale = 1;
 var newScale
 console.log("Need to find a better way to completly zoom Out. It's weird the way it works.")
+Triangulate();
 function zoomIn()
 {
 
