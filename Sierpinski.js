@@ -5,8 +5,43 @@ var elemTri_Vals;
 var wholeTri_Vals;;
 var elemTri_Stars;
 var wholeTri_Stars;
-
-
+var curScale
+var newScale
+console.log("Need to find a better way to completly zoom Out. It's weird the way it works.")
+function zoomIn()
+{
+	curScale = getComputedStyle(document.documentElement).getPropertyValue('zoom');
+	console.log("old zoom", curScale);
+	if(curScale	< 0.1)
+	{
+			newScale = curScale*10;
+	}
+	else
+	{
+		newScale = curScale*2;
+	}
+	
+	
+	document.documentElement.style.setProperty('zoom', newScale);
+	console.log("new zoom", getComputedStyle(document.documentElement).getPropertyValue('zoom'));
+}
+function zoomOut()
+{
+	curScale = getComputedStyle(document.documentElement).getPropertyValue('zoom');
+	console.log("old zoom", curScale);
+	if(curScale	> 0.1)
+	{
+		newScale = curScale*0.5;
+	}
+	else
+	{
+		newScale = curScale*0.1;
+	}
+	
+	
+	document.documentElement.style.setProperty('zoom', newScale);
+	console.log("new zoom", getComputedStyle(document.documentElement).getPropertyValue('zoom'));
+}
 function Triangulate()
 {	
 	document.getElementById("triDiv").innerHTML = "";
@@ -77,12 +112,17 @@ function Triangulate()
 			document.getElementById("triDiv").insertAdjacentHTML( 'beforeend', wholeTri_Stars[n] + "<br>");
 
 		}
+		if(document.getElementById("checkBox").checked)
+		{
+			for(let k= Height-2; k >= 0; k--)
+			{
+				document.getElementById("triDiv").insertAdjacentHTML( 'beforeend', wholeTri_Stars[k]+ "<br>");
+			}
+		}
 	}	
 	else
 	{
 		console.log("invalid input");
 		document.getElementById("triDiv").insertAdjacentHTML( 'beforeend',"invalid input");
 	}
-	
-	
 }
