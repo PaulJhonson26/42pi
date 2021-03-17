@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bar Clock</title>
+    <style>
+    	@font-face 
+		{
+			font-family: 'digital-7';
+			src: url('digital-7.ttf');
+		}
+    	.timeElement
+    	{
+    	
+    		width: 64px;
+    		background: #white;
+    		outline: 1px solid;
+    		float: left;
+    		text-align: center;
+    		font-family: "Verdana";
+    		color: black;
+   			position: absolute;
+   			bottom: 10px;
+    	}
+    	.container
+    	{
+    		width:64px;
+    		height: 600px;
+    		float: left;
+    	}
+    	.clock
+    	{
+    		width: 512px;
+    		height: 256px;
+    		position: absolute;
+    		top: 48%;
+    	}
+    	.main
+    	{
+    		display: flex;
+    		padding: 2em;
+    		height: 70vh;
+    		justify-content: center;
+    		align-items: middle;
+    	}
+    	.normalClock
+    	{
+    		color : white;
+    		font-size: 128px;
+    		position: absolute;
+    		top: 80%;
+    		left: 33%;
+    	}
+
+    	.bodyStyle
+    	{
+    		background: black
+    		overflow.y = scroll
+    	}
+    </style>
+</head>
+<body class = "bodyStyle" style ="background: black">
+
+<main class = "main">	
+	<div class = "clock">
+		<div id = "cont1" class = "container">
+			<div id = "10h" class = "timeElement" style = "background: #add8e6"></div>
+		</div>
+		<div id = "cont2" class = "container">
+			<div id = "1h" class = "timeElement" style = "background: #add8e6"></div>
+		</div>
+		<div id = "cont3" class = "container">
+			<div id = "10m" class = "timeElement" style = "background: #add8e6"></div>
+		</div>
+		<div id = "cont4" class = "container">
+			<div id = "1m" class = "timeElement" style = "background: #add8e6"></div>
+		</div>
+		<div id = "cont5" class = "container">
+			<div id = "10s" class = "timeElement" style = "background: #add8e6"></div>
+		</div>
+		<div id = "cont6" class = "container">
+			<div id = "1s" class = "timeElement" style = "background: #add8e6"></div>
+		</div>
+	</div>
+	<div id = "ConstantClockDisplay" class = "normalClock" style = "color : white"></div>
+		
+	<script type="text/javascript">
+			function showTime2()
+			{
+				var date = new Date();
+				var hours = date.getHours();
+				var minutes = date.getMinutes();
+				var seconds = date.getSeconds();
+				
+				hours = (hours<10) ? "0" + hours : hours;
+				minutes = (minutes<10) ? "0" + minutes : minutes;
+				seconds = (seconds<10) ? "0" + seconds : seconds;
+				var time = hours + ":" + minutes;
+				var timeAndSeconds = hours + "" + minutes + "" + seconds;
+				document.getElementById("ConstantClockDisplay").innerText = timeAndSeconds;
+				document.getElementById("ConstantClockDisplay").textContent = timeAndSeconds;
+
+				setTimeout(showTime2, 1000);
+			}
+			showTime2();
+	</script>
+	<script type="text/javascript">
+		function updateTime()
+		{
+			var date = new Date();
+			var millisecondsTime = date.valueOf();
+			console.log("milli TIme");
+			console.log(millisecondsTime);
+			console.log(date);
+			let hr = date.getHours();
+			let mn = date.getMinutes();
+			let sc = date.getSeconds();
+			let ms = date.getMilliseconds();
+			console.log(ms);
+
+			if(Math.floor(hr/10)*10 <2)
+			{
+				var tenH = Math.floor(hr/10)*200 + 20*(hr%10) + 2*Math.floor(0.166666 * mn); 
+				console.log(tenH);
+				var oneH = (hr % 10)*60 + mn;
+				console.log(oneH);
+			}
+			else
+			{
+				var tenH = Math.floor(hr/10)*200 + 40*(hr%10) + 4*Math.floor(0.166666 * mn); 
+				console.log(tenH);
+				var oneH = (hr % 10)*120 + mn * 2;
+				console.log(oneH);
+			}
+			
+			let tenM = Math.floor(mn/10)*100 + 10*(mn%10) + Math.floor(0.166666 * sc);
+			console.log(tenM);
+			let oneM = ((mn % 10)* 60) + sc;
+			console.log(oneM);
+			let tenS = Math.floor(sc/10)*100 + 10*(sc%10) + Math.floor(0.01 * ms);
+			console.log(tenS);
+			let oneS = ((sc % 10) * 60) + Math.floor(0.06 * ms) //     +     Math.ceiling(0.6 * (ms/10)); //*60 for every second increase by 60px
+			console.log(oneS);
+			let tenMS = Math.floor(ms/100)*100;
+			console.log(tenMS);
+			let oneMS = Math.floor((ms % 100)/10);
+			console.log(oneMS);
+
+			document.getElementById("10h").style.height = tenH + "px"; //tenH {1,2} so if we go up 512 px for each second 512 / 3600
+			document.getElementById("1h").style.height = oneH + "px";
+			document.getElementById("10m").style.height = tenM + "px";
+			document.getElementById("1m").style.height = oneM + "px";
+			document.getElementById("10s").style.height = tenS + "px";
+			document.getElementById("1s").style.height = oneS + "px";
+			setTimeout(updateTime, 10);
+		}
+		updateTime()
+
+	</script>
+</main>	
+		
+</body>
+</html>
