@@ -11,11 +11,8 @@
    		{
    			color : red;
    			background: #444444;
-   			
    			text-decoration: none;
    			font-size: 20px;
-   			
-   			padding: 14px 25px;
    			border-style: solid;
    			border-width: 2px;
     		border-color: #FFFFFF
@@ -28,36 +25,145 @@
 
     	}
     	body
-		{
-			background: #222222;
-			
-		}
-		.bodyText
-		{
-            position: absolute;
-            text-align: center;
-            top: 10%;
-            left:5%;
-            right:5%;
-            color: #FFFFFF;
-            font-size: 14px;
-            font-family: 'Courier';
-		}
+		  { 
+         font-family: Helvetica;
+			   background: #222222;
+         margin: 0px;
+         padding: 0px;
+		  }
+  		.bodyText
+  		{
+
+      }
+      .mainSection
+      {
+        display: flex;
+        flex-direction: column;
+
+      }
+      .description
+      {
+        display: flex;
+        flex-direction: column;
+        background: white;
+        padding: 100px 15%;
+      }
+      .appContainer
+      {
+        display: flex;
+        flex-direction: row;
+        background: red;
+        height: 300px;
+        border-style: solid;
+        border-width: : 1px;
+        border-color: white;
+      }
+      .appContainer2
+      {
+        display: flex;
+        flex-direction: row-reverse;
+        background: red;
+        height: 300px;
+        border-style: solid;
+        border-width: : 1px;
+        border-color: white;
+
+      }
+      .visCont
+      {
+        flex: 4;
+        background: grey;
+        overflow: hidden; 
+        display: flex;
+
+      }
+      .descCont
+      {
+        flex: 1;
+        background: #add8e6;
+      }
+      header
+      {
+        margin: 30px;
+      }
+      footer
+      {
+        height: 100px;
+      }
     </style>
 </head>
 
 
 <body class = "bodyText">
-	<h1> This website features some projects I have been working on. Ranging from small experiments, to large application like projects. 42&#120645	<br><br></h1>
-	<p> <a href="Approximating_Pi.html"> Approximating Pi</a> </p>
-	<p> <br><br><a href="FactClockFolder/FactClock.html"> Fact Clock </a></p>
-  <p> <br><br><a href="Sierpinski.html"> Sierpinski Fun </a></p>
-  <p> <br><br><a href="chessVision.html"> Chess Vision</a></p>
-  <p> <br><br><a href="BarClock.html"> Bar Clock </a></p>
-</body>
 
- <script>
- 	//	document.body.innerHTML = "<h1> Welcome to 42 " + "\u03C0" + "</h1>";
- </script>
+  <header> 
+    <h5 style = "color: white; font-size: 40px; margin: 0px;padding: 10px 0px 10px 20%">42&#120645</h5>
+  </header>
+  <section class = "mainSection">
+    <div class = "description">
+      <h2>Welcome to 42&#120645,<br><br>This website contains some personal JavaScript pograms that I have been working on over the years. Most are random ideas I wanted to bring to life, others are practical concepts that I couldn't find already existing. <br><br> Enjoy!</h2>
+    </div>
+    <div class = "appContainer">
+      <div class = "visCont">
+        <img src="approxPiBackground.PNG"  style ="width: 100%; align-self: center;" >
+      </div>
+      
+      <div class = "descCont">
+        <p> <a href="Approximating_Pi.html"> Approximating Pi</a> </p>
+        <p> Ever wondered how computers calculate digits of pi? Well here are a few techniques. Also great to test your computer speed. Try 1 million iterations!</p>
+      </div>
+    </div>
+    <div  class = "appContainer2">
+      <div class = "visCont">
+        <img src="factClockBackground.PNG"  style ="width: 100%; align-self: center;" >
+      </div>
+      
+      <div class = "descCont">
+        <p> <br><br><a href="FactClockFolder/FactClock.html"> Fact Clock </a></p>
+        <p> You know when you see the time is 13:37 and you just have to say leet? Well this clock does that for you. every time that has a relevant meaning is displayed as that rather than the time itself. (You end up realising there's a lot of meaningless times)</p>
+      </div>
+    </div>
+    <div  class = "appContainer">
+      <div class = "visCont">
+        <img src="sierpBackground.PNG"  style ="width: 100%; align-self: center;" >
+
+      </div>
+     
+      <div class = "descCont">
+         <p> <br><br><a href="Sierpinski.html"> Sierpinski Fun </a></p>
+         <p>This visual marvel allows you to appreciate the beauty of on of mathematics most famous constructions: THe Sierpinski Triangle</p>
+      </div>
+    </div>
+    <div  class = "appContainer2">
+      <div class = "visCont">
+        <img src="chessBackground.PNG"  style ="width: 100%; align-self: center;" >
+      </div>
+      
+      <div class = "descCont">
+        <p> <br><br><a href="chessVision.html"> Chess Vision</a></p>
+        <p>Train your chess visualisation skills with this cool board coordinate guesser.</p>
+      </div>
+    </div>
+    <div  class = "appContainer">
+      <div class = "visCont">
+        <img src="barClockBackground.PNG"  style ="width: 100%; align-self: center;" >
+      </div>
+      
+      <div class = "descCont">
+        <p> <br><br><a href="BarClock.html"> Bar Clock </a></p>
+        <p>Just another visual clock. wait till midnight for maximum satisfaction levels.</p>
+      </div>
+    </div>
+
+  </section>
+  <footer>
+    <p style = "color: white; margin: 20px 20px">contact: eliott.regnier@mai.mcgill.ca</p>
+  </footer>
+	
+	
+  
+  
+  
+</body>
 
 </html>
