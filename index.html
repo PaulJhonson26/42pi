@@ -77,14 +77,27 @@
         background: grey;
         overflow: hidden; 
         display: flex;
-        border-radius: 5px;
+        
 
       }
-      .visCont:hover
+      .appContainer .visCont:hover
       {
-        opacity: 100%
-        -webkit-border-radius: 100px;
-        border-radius: 100px;
+        -webkit-border-radius: 0px 100px 100px 0px;
+        border-radius: 0px 100px 100px 0px;
+      }
+      .appContainer .visCont
+      {
+         border-radius: 0px 8px 8px 0px;
+      }
+
+      .appContainer2 .visCont:hover
+      {
+        -webkit-border-radius: 100px 0px 0px 100px;
+        border-radius: 100px 0px 0px 100px;
+      }
+      .appContainer2 .visCont
+      {
+         border-radius: 8px 0px 0px 8px;
       }
       .descCont
       {
