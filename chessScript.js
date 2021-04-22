@@ -3,6 +3,8 @@ var rank =["a","b","c","d","e","f","g","h"];
 var row = [1,2,3,4,5,6,7,8];
 var squarePrompt = rank[Math.floor(Math.random() * 8)] + row[Math.floor(Math.random() * 8)];
 document.querySelector("#squarePrompt").innerHTML = squarePrompt;
+var correctAttempts = 0;
+var attempts = 0;
 for(let i = 0; i < 8; i++)
 {
 	for(let j = 0; j < 8; j++)
@@ -12,7 +14,7 @@ for(let i = 0; i < 8; i++)
 		//div.innerHTML = div.id;
 		div.addEventListener('click', function()
 		{
-			
+			attempts++;
 			console.log("HTML => ID")
 			this.innerHTML = this.id;
 			
@@ -27,6 +29,7 @@ for(let i = 0; i < 8; i++)
 				console.log("Correct");
 				document.querySelector("#status").innerHTML = "Correct!";
 				document.querySelector("#status").style.color = "green";
+				correctAttempts++;
 			}
 			else
 			{
@@ -38,6 +41,7 @@ for(let i = 0; i < 8; i++)
 			}
 			squarePrompt = rank[Math.floor(Math.random() * 8)] + row[Math.floor(Math.random() * 8)]
 			document.querySelector("#squarePrompt").innerHTML = squarePrompt;
+			document.querySelector("#accuracyDisplay").innerHTML = "Accuracy: " +  Math.round(correctAttempts/attempts * 100) / 100 ;
 		});
 	}
 }
